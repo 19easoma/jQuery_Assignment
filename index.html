@@ -47,18 +47,8 @@
 
         $('#calculate').click(function () {
           calculateInsuranceRate();
+          $('#result').fadeIn(1000);
         });
-      });
-
-      function calculateInsuranceRate() {
-        let age = $('#ageInput').val();
-        let result = 5 * Number(age) + 300;
-
-        $('#result').text("Your insurance rate is $" + result + " per year");
-      }
-
-      $('#calculate').click(function () {
-        $('#result').fadeIn(1000);
       });
 
       $(document).ready(function () {
@@ -67,9 +57,15 @@
         });
       });
       
+      function calculateInsuranceRate() {
+        let age = $('#ageInput').val();
+        let result = 5 * Number(age) + 300;
+
+        $('#result').text("Your insurance rate is $" + result + " per year");
+      }
+
       function clearText() {
         $('#ageInput').val('');
-
         $('#result').fadeOut(1000);
       }
     </script>
